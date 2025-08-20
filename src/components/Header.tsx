@@ -4,7 +4,14 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
   const [logoError, setLogoError] = useState(false);
+
+  const logoUrls = [
+    "/lovable-uploads/6d6954b9-ac8b-43be-8f8e-d4e7289604c3.png",
+    "/lovable-uploads/dd6e8a23-261a-4c0f-95c2-fde1c342c479.png", 
+    "/lovable-uploads/532fc83c-ac6c-456b-95b1-12ca4ba155d2.png"
+  ];
 
   const menuItems = [
     { label: "Home", href: "#home" },
@@ -30,13 +37,17 @@ const Header = () => {
           <div className="flex items-center">
             {!logoError ? (
               <img 
-                src="/lovable-uploads/6d6954b9-ac8b-43be-8f8e-d4e7289604c3.png" 
+                src={logoUrls[currentLogoIndex]} 
                 alt="GCF Transportes" 
                 className="h-12 w-auto md:h-14" 
-                onLoad={() => console.log("Logo carregada com sucesso!")}
+                onLoad={() => console.log(`Logo carregada com sucesso: ${logoUrls[currentLogoIndex]}`)}
                 onError={(e) => {
-                  console.error("Erro ao carregar logo:", e);
-                  setLogoError(true);
+                  console.error(`Erro ao carregar logo ${currentLogoIndex + 1}:`, logoUrls[currentLogoIndex]);
+                  if (currentLogoIndex < logoUrls.length - 1) {
+                    setCurrentLogoIndex(currentLogoIndex + 1);
+                  } else {
+                    setLogoError(true);
+                  }
                 }}
               />
             ) : (
