@@ -4,6 +4,8 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
 
   const menuItems = [
     { label: "Home", href: "#home" },
@@ -27,11 +29,40 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/f4ce8cb2-07f5-46d7-8ba5-32b05db57650.png" 
-              alt="GCF Transportes" 
-              className="h-12 w-auto md:h-14" 
-            />
+            {!logoError ? (
+              <img 
+                src="/lovable-uploads/f4ce8cb2-07f5-46d7-8ba5-32b05db57650.png" 
+                alt="GCF Transportes" 
+                className="h-12 w-auto md:h-14" 
+                onLoad={() => {
+                  console.log("Logo carregada com sucesso!");
+                  setLogoLoaded(true);
+                }}
+                onError={(e) => {
+                  console.error("Erro ao carregar logo:", e);
+                  console.log("URL da logo:", "/lovable-uploads/f4ce8cb2-07f5-46d7-8ba5-32b05db57650.png");
+                  setLogoError(true);
+                }}
+                style={{ display: logoLoaded ? 'block' : 'none' }}
+              />
+            ) : null}
+            
+            {/* Fallback text logo */}
+            {logoError && (
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-primary tracking-tight">
+                  GCF
+                </span>
+                <span className="text-xs text-muted-foreground font-medium -mt-1">
+                  TRANSPORTES
+                </span>
+              </div>
+            )}
+            
+            {/* Loading state */}
+            {!logoLoaded && !logoError && (
+              <div className="h-12 w-24 bg-muted animate-pulse rounded md:h-14 md:w-28" />
+            )}
           </div>
 
           {/* Desktop Navigation */}
