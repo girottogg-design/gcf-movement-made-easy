@@ -22,13 +22,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/6e5b9895-0622-46f7-9cf1-9a642fd2b532.png" 
+              src="/lovable-uploads/de7e0d10-7118-45d9-9da0-ceca9cd0eda8.png" 
               alt="GCF Transportes" 
               className="h-12 w-auto md:h-14" 
             />
