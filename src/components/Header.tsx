@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import gcfLogo from "@/assets/gcf-logo.png";
+import gcfLogo from "/lovable-uploads/10bcabc5-8e40-45ef-8994-43afc2686a12.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
