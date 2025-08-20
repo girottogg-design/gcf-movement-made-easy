@@ -27,9 +27,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary">
-              GCF <span className="text-secondary">Transportes</span>
-            </h1>
+            <img 
+              src="/lovable-uploads/c3d2dd20-f7f7-45dd-b99d-1c7f9b2cf978.png" 
+              alt="GCF Transportes" 
+              className="h-12 w-auto md:h-14" 
+            />
           </div>
 
           {/* Desktop Navigation */}
