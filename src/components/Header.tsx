@@ -30,7 +30,7 @@ const Header = () => {
           <div className="flex items-center">
             {!logoError ? (
               <img 
-                src="/lovable-uploads/3f2bdd54-94af-41d6-a99b-341aaa5137fd.png" 
+                src="/lovable-uploads/29389313-fa97-4633-9723-131222c86018.png" 
                 alt="GCF Transportes" 
                 className="h-12 w-auto md:h-14" 
                 onLoad={() => console.log("Logo carregada com sucesso!")}
