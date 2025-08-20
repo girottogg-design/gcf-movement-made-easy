@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="border-t border-primary-foreground/20 pt-8">
             <p className="text-primary-foreground/60 text-sm">
               © {new Date().getFullYear()} GCF Transportes. Todos os direitos reservados. | 
-              CNPJ: 00.000.000/0001-00
+              CNPJ: 17.299.756/0001-86
             </p>
           </div>
         </div>
