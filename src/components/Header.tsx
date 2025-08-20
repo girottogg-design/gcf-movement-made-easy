@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
+  
 
   const menuItems = [
     { label: "Home", href: "#home" },
@@ -28,27 +28,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            {!logoError ? (
-              <img 
-                src="/lovable-uploads/29389313-fa97-4633-9723-131222c86018.png" 
-                alt="GCF Transportes" 
-                className="h-12 w-auto md:h-14" 
-                onLoad={() => console.log("Logo carregada com sucesso!")}
-                onError={(e) => {
-                  console.error("Erro ao carregar logo:", e);
-                  setLogoError(true);
-                }}
-              />
-            ) : (
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-primary tracking-tight">
-                  GCF
-                </span>
-                <span className="text-xs text-muted-foreground font-medium -mt-1">
-                  TRANSPORTES
-                </span>
-              </div>
-            )}
+            <img 
+              src="/lovable-uploads/f8e08d2f-7af8-4b2e-b855-18efca2771a8.png" 
+              alt="GCF Transportes" 
+              className="h-12 w-auto md:h-14" 
+            />
           </div>
 
           {/* Desktop Navigation */}
