@@ -8,35 +8,61 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* GCF Transportes Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 194 66% 19%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 194 66% 19%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 194 66% 19%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Azul Escuro #0f3e4f */
+    --primary: 194 66% 19%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Vermelho #b53737 */
+    --secondary: 0 53% 46%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Cinza 01 #999999 */
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Azul Claro para hovers */
+    --accent: 192 35% 94%;
+    --accent-foreground: 194 66% 19%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 194 66% 19%;
 
-    --radius: 0.5rem;
+    --radius: 1.25rem;
+
+    /* Custom GCF Colors */
+    --gcf-blue-dark: 194 66% 19%;
+    --gcf-red: 0 53% 46%;
+    --gcf-gray-01: 0 0% 60%;
+    --gcf-gray-02: 0 0% 97%;
+    --gcf-blue-light: 192 35% 94%;
+    --gcf-success: 134 61% 41%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--gcf-blue-dark)), hsl(var(--gcf-blue-dark) / 0.8));
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--gcf-gray-02)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--gcf-blue-dark) / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--gcf-blue-dark) / 0.15);
+    --shadow-strong: 0 20px 25px -5px hsl(var(--gcf-blue-dark) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -99,7 +125,34 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  button, a, input, textarea {
+    transition: var(--transition-smooth);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
   }
 }
