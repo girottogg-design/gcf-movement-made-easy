@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://gcf-movement-made-easy.lovable.app/sitemap.xml

@@ -46,7 +46,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-20 bg-gcf-gray-02">
+    <section id="servicos" aria-label="Nossos serviços" className="py-20 bg-gcf-gray-02">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in">

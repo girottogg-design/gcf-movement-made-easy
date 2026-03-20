@@ -1,38 +1,50 @@
+import { useNavigate, useLocation } from "react-router-dom";
+
 const Footer = () => {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const menuItems = [
+    { label: "Home", href: "#home", type: "scroll" as const },
+    { label: "Sobre", href: "#sobre", type: "scroll" as const },
+    { label: "Serviços", href: "#servicos", type: "scroll" as const },
+    { label: "Destaques", href: "#destaques", type: "scroll" as const },
+    { label: "Blog", href: "/blog", type: "route" as const },
+    { label: "Contato", href: "#contato", type: "scroll" as const },
+  ];
+
+  const handleNavClick = (item: typeof menuItems[0]) => {
+    if (item.type === "route") {
+      navigate(item.href);
+    } else {
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
-  const menuItems = [
-    { label: "Home", href: "#home" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Destaques", href: "#destaques" },
-    { label: "Contato", href: "#contato" },
-  ];
-
   return (
-    <footer className="bg-primary text-primary-foreground py-16">
+    <footer className="bg-primary text-primary-foreground py-16" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          {/* Logo */}
           <div className="mb-8">
             <h2 className="text-3xl font-bold">
               GCF <span className="text-secondary">Transportes</span>
             </h2>
           </div>
 
-          {/* Navigation Menu */}
-          <nav className="mb-8">
+          <nav className="mb-8" aria-label="Navegação do rodapé">
             <div className="flex flex-wrap justify-center gap-6 md:gap-8">
               {menuItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300 font-medium"
+                  onClick={() => handleNavClick(item)}
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300 font-medium min-h-[44px] flex items-center"
                 >
                   {item.label}
                 </button>
@@ -40,7 +52,6 @@ const Footer = () => {
             </div>
           </nav>
 
-          {/* Contact Info */}
           <div className="mb-8 text-center">
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-primary-foreground/80">
               <span>operacional@gcftransportes.com.br</span>
@@ -51,7 +62,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Copyright */}
           <div className="border-t border-primary-foreground/20 pt-8">
             <p className="text-primary-foreground/60 text-sm">
               © {new Date().getFullYear()} GCF Transportes. Todos os direitos reservados. | 
