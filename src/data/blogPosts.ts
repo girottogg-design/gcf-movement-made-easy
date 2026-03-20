@@ -11,6 +11,38 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "seguro-obrigatorio-transporte-rodoviario-cargas",
+    title: "Seguro Obrigatório no Transporte Rodoviário de Cargas: O Que Mudou e Como Sua Operação Deve Se Adequar",
+    summary: "Veja quais seguros são obrigatórios no transporte rodoviário de cargas, quem deve contratar e o que muda com a verificação automática da ANTT em 2026.",
+    content: `
+<p>Seguro no transporte de cargas deixou de ser tema tratado de forma solta. Hoje, a legislação foi reforçada e a exigência regulatória ficou mais clara. A <strong>Lei nº 14.599/2023</strong> alterou o art. 13 da Lei nº 11.442/2007 e consolidou a obrigatoriedade, para o transportador rodoviário de cargas, da contratação dos seguros <strong>RCTR-C</strong>, <strong>RC-DC</strong> e <strong>RC-V</strong>. A ANTT, inclusive, já vem tratando esse conjunto como base obrigatória do novo marco do transporte rodoviário de cargas.</p>
+
+<h2>Os três seguros obrigatórios</h2>
+<p>Em termos práticos, o mercado precisa olhar para três frentes. O <strong>RCTR-C</strong> segue como seguro central da responsabilidade civil do transportador pela carga. O <strong>RC-DC</strong> cobre o risco de desaparecimento de carga. E o <strong>RC-V</strong> foi estruturado para cobrir danos corporais e materiais causados a terceiros pelo veículo automotor utilizado no transporte rodoviário de cargas.</p>
+
+<h2>Resolução CNSP 472/2024</h2>
+<p>A SUSEP avançou nessa organização ao publicar a <strong>Resolução CNSP 472/2024</strong>, que consolidou e simplificou a regulamentação dos seguros de responsabilidade civil dos transportadores de carga. Entre os pontos mais relevantes, a norma alinhou o mercado à Lei nº 14.599/2023, reforçou a obrigatoriedade do RCTR-C e do RC-DC sob responsabilidade do transportador, previu a exigência de Plano de Gerenciamento de Riscos (PGR) pactuado com a seguradora e tratou da lógica de apólice única por segurado vinculada ao RNTRC para RCTR-C e RC-DC.</p>
+
+<h2>Transparência para embarcadores</h2>
+<p>Outro ponto importante para embarcadores: a legislação passou a permitir que o proprietário da mercadoria, na contratação do frete, exija do transportador a cópia da apólice, com condições, prêmio e gerenciamento de risco contratados. Isso melhora transparência e reduz contratação no escuro. Quem contrata transporte precisa saber se a operação está realmente coberta ou só "parece" coberta.</p>
+
+<h2>Verificação automática a partir de 2026</h2>
+<p>Em 2026, a fiscalização entra em um patamar mais operacional. A ANTT informou que o intercâmbio automatizado de dados entre seguradoras e RNTRC começou em fase de homologação em 10 de março de 2026, vai até 30 de junho de 2026 e entra em produção em 1º de julho de 2026. A partir daí, a verificação automática da contratação dos seguros obrigatórios passará a ser considerada para fins de inscrição e manutenção do RNTRC.</p>
+
+<h2>O que muda na rotina da transportadora</h2>
+<p>Traduzindo para a rotina da transportadora: não basta mais "ter seguro" de forma genérica. A operação precisa estar documentada, regular, coerente com o RNTRC e aderente ao desenho regulatório atual. Apólice desorganizada, informação inconsistente e contratação mal estruturada deixam de ser detalhe administrativo e passam a ser risco real para continuidade operacional.</p>
+
+<h2>E para o embarcador?</h2>
+<p>Para o embarcador, o recado é igualmente direto: contratar frete sem validar a estrutura securitária do transportador aumenta exposição financeira e operacional. Em um mercado profissional, preço, prazo, rastreabilidade e cobertura securitária precisam andar juntos. Seguro não é acessório. É requisito básico de operação séria.</p>
+
+<p><strong>Na GCF Transportes, segurança operacional não é discurso comercial. É processo, controle e responsabilidade.</strong> Se a sua empresa busca uma operação de transporte com governança, acompanhamento e estrutura para atender com previsibilidade, <a href="/#contato">fale com nosso time</a>.</p>
+    `,
+    date: "2026-03-20",
+    author: "Equipe GCF",
+    tags: ["Seguro", "Regulação", "Transporte"],
+    imageUrl: "https://images.unsplash.com/photo-1554672408-730536b2f4c7?w=800&h=400&fit=crop"
+  },
+  {
     slug: "lei-do-frete-minimo-transporte-rodoviario",
     title: "Lei do Frete Mínimo no Transporte Rodoviário: O Que Embarcadores e Transportadores Precisam Saber",
     summary: "Entenda o que é o piso mínimo do frete, como a ANTT calcula a tabela, quando ela é atualizada e por que cumprir a regra reduz risco operacional e jurídico.",
