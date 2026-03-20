@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-20",
     author: "Equipe GCF",
     tags: ["Seguro", "Regulação", "Transporte"],
-    imageUrl: "https://images.unsplash.com/photo-1554672408-730536b2f4c7?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=400&fit=crop"
   },
   {
     slug: "lei-do-frete-minimo-transporte-rodoviario",
