@@ -11,6 +11,37 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "lei-do-frete-minimo-transporte-rodoviario",
+    title: "Lei do Frete Mínimo no Transporte Rodoviário: O Que Embarcadores e Transportadores Precisam Saber",
+    summary: "Entenda o que é o piso mínimo do frete, como a ANTT calcula a tabela, quando ela é atualizada e por que cumprir a regra reduz risco operacional e jurídico.",
+    content: `
+<p>Muita gente chama de "lei do frete mínimo dos motoristas", mas o nome correto é a <strong>Política Nacional de Pisos Mínimos do Transporte Rodoviário de Cargas</strong>. Na prática, a regra determina que o frete no transporte rodoviário de cargas, em âmbito nacional, deve ser remunerado em valor igual ou superior ao piso mínimo fixado pela ANTT. Não se trata de salário de motorista. Trata-se do valor mínimo da operação de transporte.</p>
+
+<p>Isso importa porque frete abaixo do custo desorganiza o mercado, comprime margem, compromete a capacidade operacional do transportador e abre espaço para conflito contratual. A própria ANTT vem reforçando que a política de piso mínimo busca dar segurança jurídica, previsibilidade e sustentabilidade econômica ao setor.</p>
+
+<h2>Não existe uma tabela única</h2>
+<p>Outro ponto que o mercado ainda confunde: não existe uma tabela única e fixa para toda operação. O cálculo do piso depende de variáveis objetivas, como tipo de carga, número de eixos, distância, composição veicular, alto desempenho e retorno vazio. Por isso, a forma correta de apurar o valor mínimo é usar a calculadora oficial da ANTT ou aplicar a metodologia vigente da agência.</p>
+
+<h2>Como funciona a atualização</h2>
+<p>A atualização da tabela também não é aleatória. Pela sistemática legal, a ANTT publica novas tabelas em bases periódicas e também pode fazer revisão extraordinária quando há variação relevante do diesel. Em janeiro de 2026, por exemplo, a agência concluiu uma revisão técnica da metodologia e informou a entrada em vigor da nova norma em 20 de janeiro de 2026, com validade para o respectivo período. Além disso, a ANTT já vinha destacando que as revisões ordinárias ocorrem em janeiro e julho, e que o gatilho do diesel segue sendo peça central na atualização.</p>
+
+<h2>O que muda para embarcadores</h2>
+<p>Para embarcadores e indústrias, o recado é simples: negociar frete sem olhar a base regulatória é erro. O preço precisa fechar conta comercial, mas também precisa respeitar a estrutura mínima exigida pela regulação. Quando isso não acontece, o risco não fica só no papel. Ele aparece em disputa, questionamento operacional, fiscalização e desgaste na relação com o transportador.</p>
+
+<h2>O que muda para transportadores</h2>
+<p>Para transportadores, a leitura também é objetiva: o piso mínimo não substitui gestão comercial, produtividade, roteirização ou eficiência de frota. Ele é apenas o piso regulatório da operação. Empresa séria continua precisando formar preço com base em custo real, perfil da carga, risco da rota, janela de atendimento, exigência do cliente e nível de serviço. O piso é o mínimo. Gestão é outra coisa.</p>
+
+<h2>Na prática</h2>
+<p>A melhor decisão é tratar o frete mínimo como parte da governança comercial. Antes de fechar qualquer operação, vale conferir a classificação correta da carga, a distância, a configuração do veículo e as premissas da tabela vigente. Isso evita negociação errada na origem e problema depois na execução.</p>
+
+<p><strong>Na GCF Transportes, preço não é chute. É operação, custo, risco e responsabilidade.</strong> Se a sua empresa busca um parceiro logístico que trate contratação de frete com critério técnico e segurança operacional, <a href="/#contato">fale com nosso time</a>.</p>
+    `,
+    date: "2026-03-20",
+    author: "Equipe GCF",
+    tags: ["Frete", "Regulação", "Transporte"],
+    imageUrl: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=400&fit=crop"
+  },
+  {
     slug: "como-otimizar-logistica-transporte-rodoviario",
     title: "Como Otimizar a Logística no Transporte Rodoviário",
     summary: "Descubra as melhores práticas para reduzir custos e aumentar a eficiência no transporte rodoviário de cargas, com foco em roteirização e gestão de frotas.",
