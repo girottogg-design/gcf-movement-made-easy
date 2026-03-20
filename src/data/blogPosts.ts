@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-20",
     author: "Equipe GCF",
     tags: ["Frete", "Regulação", "Transporte"],
-    imageUrl: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1473445361085-b2a222186eb0?w=800&h=400&fit=crop"
   },
   {
     slug: "como-otimizar-logistica-transporte-rodoviario",
