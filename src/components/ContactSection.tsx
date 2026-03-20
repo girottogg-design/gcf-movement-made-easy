@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -20,16 +21,29 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Mensagem enviada!",
         description: "Entraremos em contato em breve.",
       });
       setFormData({ name: "", phone: "", email: "", company: "", message: "" });
+    } catch (err) {
+      console.error("Erro ao enviar:", err);
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente ou entre em contato por telefone.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleWhatsAppClick = () => {
@@ -77,7 +91,6 @@ const ContactSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="animate-fade-in">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
@@ -159,7 +172,6 @@ const ContactSection = () => {
             </form>
           </div>
 
-          {/* Contact Info */}
           <div className="animate-fade-in-up">
             <div className="bg-background rounded-xl p-8 shadow-soft">
               <h3 className="text-2xl font-bold text-primary mb-8">Informações de Contato</h3>
