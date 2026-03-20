@@ -1,0 +1,97 @@
+export interface BlogPost {
+  slug: string;
+  title: string;
+  summary: string;
+  content: string;
+  date: string;
+  author: string;
+  tags: string[];
+  imageUrl: string;
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "como-otimizar-logistica-transporte-rodoviario",
+    title: "Como Otimizar a Logística no Transporte Rodoviário",
+    summary: "Descubra as melhores práticas para reduzir custos e aumentar a eficiência no transporte rodoviário de cargas, com foco em roteirização e gestão de frotas.",
+    content: `
+<p>O transporte rodoviário é responsável por mais de 60% da movimentação de cargas no Brasil. Com margens cada vez mais apertadas e a exigência por entregas rápidas, otimizar a logística deixou de ser um diferencial e se tornou uma necessidade de sobrevivência.</p>
+
+<h2>1. Roteirização Inteligente</h2>
+<p>Planejar rotas não se resume a escolher o caminho mais curto. Uma boa roteirização considera pedágios, condições das estradas, restrições de tráfego e janelas de entrega. Na GCF Transportes, utilizamos sistemas de TMS que calculam a rota ideal considerando todas essas variáveis, resultando em economia de combustível de até 15%.</p>
+
+<h2>2. Gestão de Frota em Tempo Real</h2>
+<p>Monitorar cada veículo via GPS permite tomar decisões rápidas diante de imprevistos. Desvios de rota, paradas não programadas e atrasos são identificados instantaneamente, permitindo ações corretivas imediatas. Isso também contribui para a segurança da carga e do motorista.</p>
+
+<h2>3. Consolidação de Cargas</h2>
+<p>O sistema Milk Run, amplamente utilizado pela GCF, permite coletar mercadorias de múltiplos fornecedores em uma única viagem. Isso reduz o número de veículos na estrada, diminui custos por unidade transportada e contribui para a sustentabilidade ambiental.</p>
+
+<h2>4. Manutenção Preventiva</h2>
+<p>Veículos parados por quebra representam prejuízo duplo: custo de reparo e atraso na entrega. Um programa rigoroso de manutenção preventiva, com intervalos baseados em quilometragem e horas de uso, mantém a frota operando com máxima eficiência.</p>
+
+<h2>5. Indicadores de Performance (KPIs)</h2>
+<p>Sem medir, não há como melhorar. KPIs como custo por km, taxa de ocupação do veículo, pontualidade de entrega e índice de avarias devem ser acompanhados mensalmente. Na GCF, nossos clientes têm acesso a dashboards com esses indicadores em tempo real.</p>
+
+<p>Investir em otimização logística é investir na competitividade da sua empresa. Cada real economizado no transporte vai direto para o resultado final do negócio.</p>
+    `,
+    date: "2025-03-15",
+    author: "Equipe GCF",
+    tags: ["Logística", "Transporte", "Otimização"],
+    imageUrl: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=400&fit=crop"
+  },
+  {
+    slug: "importancia-armazenagem-especializada",
+    title: "A Importância da Armazenagem Especializada para Cargas Sensíveis",
+    summary: "Entenda por que materiais como papel, aço e autopeças exigem condições específicas de armazenamento e como isso impacta diretamente na qualidade do produto final.",
+    content: `
+<p>Armazenar mercadorias vai muito além de simplesmente guardar produtos em um galpão. Para cargas sensíveis como papel, aço e autopeças, condições inadequadas de armazenagem podem significar perdas financeiras significativas e comprometimento da qualidade.</p>
+
+<h2>Papel: Controle de Umidade é Fundamental</h2>
+<p>Bobinas de papel são extremamente sensíveis à umidade. Um ambiente com umidade relativa acima de 65% pode causar ondulação, mofo e inutilização do material. Na GCF, nossos armazéns mantêm controle rigoroso de temperatura e umidade, garantindo que cada bobina chegue ao destino em perfeitas condições.</p>
+
+<h2>Aço: Proteção Contra Corrosão</h2>
+<p>Chapas e bobinas de aço exigem armazenagem coberta, com proteção contra chuva e condensação. O empilhamento deve seguir normas específicas para evitar deformações. Nossos operadores são treinados para manusear esse tipo de carga com equipamentos adequados, como pontes rolantes e empilhadeiras especiais.</p>
+
+<h2>Autopeças: Organização e Rastreabilidade</h2>
+<p>Peças automotivas demandam controle rigoroso de inventário. Cada item precisa ser identificado, catalogado e facilmente localizado. Sistemas de WMS (Warehouse Management System) são essenciais para garantir que a peça certa chegue à linha de montagem no momento exato.</p>
+
+<h2>Crossdocking: Agilidade sem Estoque</h2>
+<p>Para operações que não requerem armazenamento prolongado, o crossdocking permite receber mercadorias e redirecioná-las imediatamente para o destino final. Esse processo reduz custos de armazenagem e acelera significativamente a cadeia de distribuição.</p>
+
+<p>Investir em armazenagem especializada é proteger seu patrimônio e garantir a satisfação do cliente final. Na GCF Transportes, tratamos cada carga com o cuidado que ela merece.</p>
+    `,
+    date: "2025-02-28",
+    author: "Equipe GCF",
+    tags: ["Armazenagem", "Logística", "Qualidade"],
+    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=400&fit=crop"
+  },
+  {
+    slug: "tecnologia-rastreamento-frotas",
+    title: "Tecnologia no Rastreamento de Frotas: Segurança e Transparência",
+    summary: "Saiba como sistemas modernos de rastreamento GPS e plataformas de gestão transformam a segurança e a transparência no transporte de cargas.",
+    content: `
+<p>A tecnologia revolucionou a forma como gerenciamos frotas de transporte. O que antes dependia de ligações telefônicas e planilhas manuais, hoje acontece em tempo real, na palma da mão. Na GCF Transportes, a tecnologia é um dos pilares que sustentam nossa operação.</p>
+
+<h2>Rastreamento GPS em Tempo Real</h2>
+<p>Todos os veículos da frota GCF são equipados com rastreadores GPS de última geração. Isso permite que tanto nossa central de operações quanto nossos clientes acompanhem cada etapa da entrega. A posição do veículo, velocidade, paradas e previsão de chegada estão disponíveis 24 horas por dia.</p>
+
+<h2>Plataforma TI Exclusiva</h2>
+<p>Desenvolvemos uma plataforma própria de tecnologia que conecta diretamente nossos clientes à operação. Através de um portal web, é possível solicitar coletas, acompanhar entregas, consultar notas fiscais e acessar relatórios detalhados de performance.</p>
+
+<h2>Gestão de Janelas de Entrega</h2>
+<p>Muitas indústrias trabalham com agendamento rigoroso de recebimento. Nosso sistema permite programar entregas dentro de janelas específicas, respeitando as regras de cada cliente e evitando filas e tempos de espera desnecessários.</p>
+
+<h2>Segurança da Carga</h2>
+<p>Além do rastreamento, nossos veículos contam com sensores de abertura de baú, câmeras de segurança e sistemas de bloqueio remoto. Em caso de qualquer irregularidade, nossa central é alertada imediatamente e pode tomar ações preventivas.</p>
+
+<h2>Relatórios e KPIs</h2>
+<p>Dados são o novo petróleo da logística. Nossa plataforma gera relatórios automáticos com indicadores como tempo médio de entrega, índice de pontualidade, custo por rota e taxa de avarias. Esses dados permitem que nossos clientes tomem decisões baseadas em evidências.</p>
+
+<p>Na GCF Transportes, acreditamos que tecnologia e transporte andam juntos. Cada investimento em inovação se traduz em mais segurança, transparência e eficiência para nossos clientes.</p>
+    `,
+    date: "2025-01-20",
+    author: "Equipe GCF",
+    tags: ["Tecnologia", "Rastreamento", "Segurança"],
+    imageUrl: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&h=400&fit=crop"
+  }
+];
