@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-20",
     author: "Equipe GCF",
     tags: ["Frete", "Regulação", "Transporte"],
-    imageUrl: "https://images.unsplash.com/photo-1473445361085-b2a222186eb0?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=400&fit=crop"
   },
   {
     slug: "como-otimizar-logistica-transporte-rodoviario",
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-03-15",
     author: "Equipe GCF",
     tags: ["Logística", "Transporte", "Otimização"],
-    imageUrl: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=800&h=400&fit=crop"
   },
   {
     slug: "importancia-armazenagem-especializada",
