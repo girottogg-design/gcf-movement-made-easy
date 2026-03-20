@@ -2,7 +2,7 @@ import { Quote } from "lucide-react";
 
 const TestimonialSection = () => {
   return (
-    <section className="py-20 bg-primary text-primary-foreground">
+    <section aria-label="Depoimento de cliente" className="py-20 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Quote className="w-16 h-16 mx-auto mb-8 text-secondary" />

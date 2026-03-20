@@ -65,7 +65,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contato" className="py-20 bg-gcf-gray-02">
+    <section id="contato" aria-label="Entre em contato" className="py-20 bg-gcf-gray-02">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in">

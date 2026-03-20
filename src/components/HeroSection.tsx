@@ -10,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" aria-label="Início" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with parallax effect */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
