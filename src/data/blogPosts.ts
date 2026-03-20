@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-03-15",
     author: "Equipe GCF",
     tags: ["Logística", "Transporte", "Otimização"],
-    imageUrl: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&h=400&fit=crop"
   },
   {
     slug: "importancia-armazenagem-especializada",
