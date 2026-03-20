@@ -155,6 +155,6 @@ export const blogPosts: BlogPost[] = [
     date: "2025-01-20",
     author: "Equipe GCF",
     tags: ["Tecnologia", "Rastreamento", "Segurança"],
-    imageUrl: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
   }
 ];
