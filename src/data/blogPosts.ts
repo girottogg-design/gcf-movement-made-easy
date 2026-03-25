@@ -187,6 +187,6 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-25",
     author: "Equipe GCF",
     tags: ["Milk Run", "Logística", "Distribuição"],
-    imageUrl: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=800&h=400&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=400&fit=crop"
   }
 ];
