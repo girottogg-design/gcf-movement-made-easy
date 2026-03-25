@@ -156,5 +156,37 @@ export const blogPosts: BlogPost[] = [
     author: "Equipe GCF",
     tags: ["Tecnologia", "Rastreamento", "Segurança"],
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+  },
+  {
+    slug: "milk-run-distribuicao-logistica",
+    title: "Milk Run: Como Funciona o Sistema de Coleta Programada e Por Que Ele Reduz Custos Logísticos",
+    summary: "Entenda o que é o Milk Run, como ele otimiza a cadeia de suprimentos com rotas planejadas de coleta e por que grandes indústrias adotam esse modelo para reduzir custos e aumentar eficiência.",
+    content: `
+<p>O termo <strong>Milk Run</strong> vem da logística de coleta de leite nos Estados Unidos, onde um único caminhão passava em diversas fazendas recolhendo a produção do dia. O conceito foi adaptado pela indústria e hoje é uma das estratégias mais eficientes para reduzir custos logísticos e otimizar a cadeia de suprimentos.</p>
+
+<h2>O que é o Milk Run na logística</h2>
+<p>Na prática, o Milk Run é um sistema de coleta programada em que um veículo percorre uma rota pré-definida, passando em múltiplos fornecedores para coletar materiais e consolidá-los em uma única viagem até o destino final. Em vez de cada fornecedor enviar seu próprio caminhão, um único veículo faz todo o circuito. Isso elimina viagens ociosas, reduz o número de veículos na estrada e melhora a previsibilidade da operação.</p>
+
+<h2>Como funciona na prática</h2>
+<p>A operação começa com o planejamento da rota. A transportadora define a sequência de coletas com base na localização dos fornecedores, nos volumes a serem coletados, nas janelas de horário de cada ponto e na capacidade do veículo. O motorista sai do centro de distribuição ou da planta industrial, percorre os pontos de coleta na ordem programada e retorna com a carga consolidada. Todo o processo é monitorado em tempo real via GPS e sistemas de gestão de transporte (TMS).</p>
+
+<h2>Benefícios do Milk Run</h2>
+<p>Os ganhos são diretos e mensuráveis. A <strong>redução de frota</strong> é o mais visível: onde antes eram necessários cinco caminhões para atender cinco fornecedores, um único veículo resolve. O <strong>custo por unidade transportada</strong> cai significativamente, porque o frete é rateado entre múltiplas coletas. O <strong>estoque fica mais enxuto</strong>, já que as coletas são frequentes e programadas, permitindo trabalhar com lotes menores e reduzir capital parado em armazém. Além disso, há ganho ambiental: menos veículos circulando significa menos emissão de CO₂ e menor desgaste da malha viária.</p>
+
+<h2>Quando faz sentido adotar o Milk Run</h2>
+<p>O modelo funciona melhor quando há múltiplos fornecedores em uma mesma região geográfica, quando os volumes individuais não justificam um caminhão dedicado e quando a operação exige frequência regular de abastecimento. Indústrias automotivas, de alimentos e de bens de consumo são os maiores usuários do Milk Run no Brasil. Mas o conceito se aplica a qualquer operação onde a consolidação de cargas gera economia.</p>
+
+<h2>Milk Run vs. distribuição convencional</h2>
+<p>Na distribuição convencional, cada fornecedor organiza seu próprio envio. Isso gera redundância: vários caminhões parcialmente carregados fazendo trajetos semelhantes. O Milk Run inverte essa lógica. A responsabilidade logística é centralizada, a rota é otimizada e o veículo opera com taxa de ocupação próxima de 100%. A diferença no custo operacional pode chegar a 30% dependendo do perfil da operação.</p>
+
+<h2>Como a GCF opera o Milk Run</h2>
+<p>Na GCF Transportes, o Milk Run é uma das modalidades que operamos com mais experiência. Nosso time de planejamento logístico desenha a rota ideal considerando distâncias, volumes, janelas de coleta e perfil da carga. O monitoramento é feito em tempo real e o cliente tem acesso a indicadores de performance da operação. Cada coleta é registrada, rastreada e documentada.</p>
+
+<p><strong>Na GCF Transportes, eficiência logística não é teoria. É rota planejada, carga consolidada e custo controlado.</strong> Se a sua empresa quer reduzir custos de transporte com coleta programada, <a href="/#contato">fale com nosso time</a>.</p>
+    `,
+    date: "2026-03-25",
+    author: "Equipe GCF",
+    tags: ["Milk Run", "Logística", "Distribuição"],
+    imageUrl: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=800&h=400&fit=crop"
   }
 ];
