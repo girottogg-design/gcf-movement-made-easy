@@ -1,4 +1,4 @@
-import { Truck, Warehouse, Clock, BarChart3 } from "lucide-react";
+import { Truck, Warehouse, Clock, BarChart3, Radio } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
