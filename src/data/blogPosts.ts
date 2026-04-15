@@ -188,5 +188,53 @@ export const blogPosts: BlogPost[] = [
     author: "Equipe GCF",
     tags: ["Milk Run", "Logística", "Distribuição"],
     imageUrl: "https://images.unsplash.com/photo-1591768793355-74d04bb6608f?w=800&h=400&fit=crop"
+  },
+  {
+    slug: "torre-de-controle-logistica-o-que-e",
+    title: "Torre de Controle Logística: O Que É, Como Funciona e Por Que Terceirizar",
+    summary: "Entenda o que é uma Torre de Controle Logística, como ela funciona na prática, quais benefícios ela traz para a operação de transporte e quando faz sentido terceirizar esse serviço.",
+    content: `
+<p>O conceito de <strong>Torre de Controle Logística</strong> vem ganhando espaço no mercado de transporte e supply chain. Mas, diferente do que muita gente imagina, torre de controle não é só um painel com GPS. É uma estrutura de gestão operacional que centraliza o monitoramento, a comunicação e a tomada de decisão sobre toda a cadeia de transporte.</p>
+
+<h2>O que é a Torre de Controle Logística</h2>
+<p>Na prática, a Torre de Controle é uma central que acompanha em tempo real cada operação de transporte — desde a saída do veículo até a confirmação de entrega. Ela integra rastreamento, gestão de ocorrências, comunicação com motoristas e clientes, análise de indicadores e tratamento de exceções. Tudo em um único ponto de controle.</p>
+
+<p>Esse modelo permite que a empresa tenha visibilidade total da operação sem depender de informações fragmentadas entre transportadoras, motoristas e sistemas desconectados.</p>
+
+<h2>Como funciona na prática</h2>
+<p>A operação da torre começa antes da carga sair. A equipe verifica documentação, checklist veicular, janelas de entrega e requisitos do cliente. Durante o transporte, o monitoramento é contínuo: posição do veículo, tempo estimado de chegada, paradas, desvios e alertas de segurança. Quando uma ocorrência acontece — atraso, devolução, avaria — o time da torre age imediatamente, acionando as partes envolvidas e registrando tudo para análise posterior.</p>
+
+<p>Ao final de cada período, relatórios com KPIs como pontualidade, lead time, custo por entrega e taxa de avarias são gerados automaticamente. Esses dados alimentam decisões estratégicas e ajudam a melhorar a operação de forma contínua.</p>
+
+<h2>Benefícios mensuráveis</h2>
+<p>Os resultados de uma torre de controle bem operada são diretos:</p>
+<ul>
+<li><strong>Redução de custos operacionais</strong> — identificação de gargalos, eliminação de retrabalho, otimização de rotas</li>
+<li><strong>Aumento da pontualidade</strong> — gestão proativa de exceções antes que virem problema</li>
+<li><strong>Visibilidade para o cliente</strong> — informação em tempo real sobre cada entrega</li>
+<li><strong>Redução de avarias e devoluções</strong> — conferência prévia e monitoramento contínuo</li>
+<li><strong>Base de dados para decisão</strong> — indicadores reais, não estimativas</li>
+</ul>
+
+<h2>Quando terceirizar a Torre de Controle</h2>
+<p>Montar uma torre de controle interna exige investimento em tecnologia, equipe especializada, processos e infraestrutura. Para muitas empresas, especialmente aquelas cujo core business não é logística, terceirizar a torre faz mais sentido do que construir do zero.</p>
+
+<p>A terceirização é indicada quando:</p>
+<ul>
+<li>A empresa trabalha com múltiplas transportadoras e precisa de um ponto único de controle</li>
+<li>O volume de entregas exige monitoramento 24/7 que a estrutura interna não comporta</li>
+<li>O SLA do cliente final exige visibilidade e resposta rápida a ocorrências</li>
+<li>A operação precisa de indicadores que hoje não são gerados de forma consistente</li>
+</ul>
+
+<h2>Torre de Controle na GCF Transportes</h2>
+<p>Na GCF, a Torre de Controle não é um produto novo. É parte da forma como operamos. Nossa equipe monitora cada viagem, trata ocorrências em tempo real e entrega indicadores para que nossos clientes tomem decisões com base em dados — não em suposições.</p>
+
+<p>Se a sua empresa busca visibilidade, controle e previsibilidade na operação de transporte, conheça nosso serviço de <a href="/torre-de-controle">Torre de Controle Logística</a> ou <a href="/#contato">fale diretamente com nosso time</a>.</p>
+    `,
+    date: "2026-04-10",
+    author: "Equipe GCF",
+    tags: ["Torre de Controle", "Logística", "Gestão de Fretes"],
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
   }
 ];
