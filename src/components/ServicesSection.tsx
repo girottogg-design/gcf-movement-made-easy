@@ -1,4 +1,4 @@
-import { Truck, Warehouse, Clock, BarChart3 } from "lucide-react";
+import { Truck, Warehouse, Clock, BarChart3, Radio } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -41,6 +41,17 @@ const ServicesSection = () => {
         "Informações em tempo real",
         "Gestão de janelas de entrega",
         "Controle de tabelas de frete"
+      ]
+    },
+    {
+      icon: Radio,
+      title: "Torre de Controle",
+      items: [
+        "Monitoramento logístico em tempo real",
+        "Gestão proativa de ocorrências",
+        "Visibilidade 360° da cadeia",
+        "Indicadores e dashboards personalizados",
+        "Integração com TMS e ERP"
       ]
     }
   ];
