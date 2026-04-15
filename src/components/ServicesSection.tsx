@@ -42,6 +42,17 @@ const ServicesSection = () => {
         "Gestão de janelas de entrega",
         "Controle de tabelas de frete"
       ]
+    },
+    {
+      icon: Radio,
+      title: "Torre de Controle",
+      items: [
+        "Monitoramento logístico em tempo real",
+        "Gestão proativa de ocorrências",
+        "Visibilidade 360° da cadeia",
+        "Indicadores e dashboards personalizados",
+        "Integração com TMS e ERP"
+      ]
     }
   ];
 
