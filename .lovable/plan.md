@@ -1,46 +1,28 @@
 
 
-## Plano: Páginas de Serviços + Links nos Cards + Footer Profissional
+## Plano: Scroll to Top + Responsividade
 
-### 1. Cards de serviço com links
+### Problema 1 — Página abre no footer
+Quando o React Router navega para uma nova rota, o scroll da página anterior é mantido. Como os cards de serviço ficam embaixo na home, ao clicar "Saiba Mais" a página de destino abre já rolada até o footer.
 
-Adicionar campo `href` a cada serviço no `ServicesSection.tsx`. Cards que têm página dedicada ganham um botão "Saiba Mais" linkando para a rota. Todos os cards terão link (páginas novas criadas abaixo).
+**Solução**: Criar um componente `ScrollToTop` que escuta mudanças de rota e executa `window.scrollTo(0, 0)`. Adicioná-lo dentro do `BrowserRouter` no `App.tsx`.
 
-### 2. Criar páginas dedicadas para cada serviço (sem menu)
+### Problema 2 — Responsividade geral
+Revisar e ajustar os seguintes pontos em todas as páginas de serviço e componentes:
 
-Criar 4 novas páginas (Torre de Controle já existe):
-
-- `/transporte-rodoviario` — `src/pages/TransporteRodoviario.tsx`
-- `/armazenagem` — `src/pages/Armazenagem.tsx`
-- `/fretes-urgentes` — `src/pages/FretesUrgentes.tsx`
-- `/tms-vms` — `src/pages/TmsVms.tsx`
-
-Cada página segue o mesmo padrão da Torre de Controle: Hero, seção explicativa, benefícios, CTA. Helmet com SEO (title, description, canonical, JSON-LD Service). Header e Footer reutilizados.
-
-Registrar as 4 novas rotas em `App.tsx`. Adicionar ao `sitemap.xml`.
-
-### 3. Footer profissional
-
-Redesenhar `Footer.tsx` com layout em colunas:
-
-- **Coluna 1**: Logo + descrição curta da empresa
-- **Coluna 2**: Links de navegação (Home, Sobre, Serviços, Blog, Contato)
-- **Coluna 3**: Contato (email, telefone, cidade)
-- **Coluna 4**: Redes sociais com ícones (Instagram + LinkedIn)
-  - Instagram: `https://www.instagram.com/gcf_transportes_/`
-  - LinkedIn: `https://www.linkedin.com/company/gcf-transportes`
-- **Rodapé inferior**: Copyright + CNPJ
+- **Hero sections**: Ajustar padding/font-size para mobile (`text-3xl` em mobile, `text-5xl` em desktop)
+- **Grids de benefícios**: Garantir `grid-cols-1` em mobile, `md:grid-cols-2`, `lg:grid-cols-3`
+- **Botões CTA**: Garantir `w-full sm:w-auto` para ficarem full-width em mobile
+- **Footer**: Verificar que as 4 colunas colapsam em `grid-cols-1` no mobile
+- **ServicesSection**: Grid `grid-cols-1 md:grid-cols-2` (já está ok, confirmar)
+- **Header mobile**: Já tem menu hamburger (ok), verificar espaçamentos
 
 ### Arquivos
 
 | Ação | Arquivo |
 |------|---------|
-| Criar | `src/pages/TransporteRodoviario.tsx` |
-| Criar | `src/pages/Armazenagem.tsx` |
-| Criar | `src/pages/FretesUrgentes.tsx` |
-| Criar | `src/pages/TmsVms.tsx` |
-| Editar | `src/components/ServicesSection.tsx` — links nos cards |
-| Editar | `src/components/Footer.tsx` — redesign profissional |
-| Editar | `src/App.tsx` — 4 novas rotas |
-| Editar | `public/sitemap.xml` — 4 novas URLs |
+| Criar | `src/components/ScrollToTop.tsx` — componente que faz `scrollTo(0,0)` em cada mudança de rota |
+| Editar | `src/App.tsx` — adicionar `<ScrollToTop />` dentro do `BrowserRouter` |
+| Revisar | Todas as 5 páginas de serviço — ajustes de responsividade se necessário |
+| Revisar | `Footer.tsx`, `Header.tsx` — garantir responsividade |
 
