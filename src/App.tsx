@@ -8,6 +8,10 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import TorreDeControle from "./pages/TorreDeControle";
+import TransporteRodoviario from "./pages/TransporteRodoviario";
+import Armazenagem from "./pages/Armazenagem";
+import FretesUrgentes from "./pages/FretesUrgentes";
+import TmsVms from "./pages/TmsVms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +26,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/torre-de-controle" element={<TorreDeControle />} />
+            <Route path="/transporte-rodoviario" element={<TransporteRodoviario />} />
+            <Route path="/armazenagem" element={<Armazenagem />} />
+            <Route path="/fretes-urgentes" element={<FretesUrgentes />} />
+            <Route path="/tms-vms" element={<TmsVms />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
