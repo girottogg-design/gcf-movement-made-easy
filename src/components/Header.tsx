@@ -13,6 +13,7 @@ const Header = () => {
     { label: "Sobre", href: "#sobre", type: "scroll" as const },
     { label: "Serviços", href: "#servicos", type: "scroll" as const },
     { label: "Destaques", href: "#destaques", type: "scroll" as const },
+    { label: "Torre de Controle", href: "/torre-de-controle", type: "route" as const },
     { label: "Blog", href: "/blog", type: "route" as const },
     { label: "Contato", href: "#contato", type: "scroll" as const },
   ];
