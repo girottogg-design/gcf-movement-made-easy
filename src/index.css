@@ -171,7 +171,7 @@ All colors MUST be HSL.
     50% { transform: translateY(8px); opacity: 1; }
   }
 
-  .animate-slow-zoom { animation: slow-zoom 20s ease-in-out infinite; will-change: transform; }
+  .animate-slow-zoom { animation: slow-zoom 40s ease-out forwards; will-change: transform; }
   .animate-blur-in {
     opacity: 0;
     animation: blur-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
