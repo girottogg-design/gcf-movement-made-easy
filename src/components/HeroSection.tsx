@@ -1,9 +1,18 @@
-import { useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-transport.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showVideo, setShowVideo] = useState(true);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) setShowVideo(false);
+  }, []);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) element.scrollIntoView({ behavior: "smooth" });
@@ -12,71 +21,46 @@ const HeroSection = () => {
   const titleWords = ["Somos", "o", "movimento", "que"];
   const accentWords = ["transforma", "o", "Brasil"];
 
-  // Radial particles — born near the vanishing point and drift outward (subtle)
-  const particles = useMemo(() => {
-    const count = 16;
-    return Array.from({ length: count }, (_, i) => {
-      const angle = (i / count) * Math.PI * 2 + (i % 3) * 0.4;
-      const distance = 600 + (i % 5) * 180;
-      const x = Math.cos(angle) * distance;
-      const y = Math.sin(angle) * distance;
-      const duration = 7 + (i % 5) * 0.8;
-      const delay = (i * 0.5) % duration;
-      const size = 1 + (i % 3) * 0.5;
-      const opacity = 0.15 + (i % 4) * 0.04;
-      return { x, y, duration, delay, size, opacity, id: i };
-    });
-  }, []);
-
   return (
     <section
       id="home"
       aria-label="Início"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary"
     >
-      {/* Background image with continuous slow zoom-in */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-slow-zoom"
-        style={{
-          backgroundImage: `linear-gradient(rgba(15, 62, 79, 0.65), rgba(15, 62, 79, 0.55)), url(${heroImage})`,
-        }}
-      />
+      {/* Background video */}
+      {showVideo && (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroImage}
+          className="absolute inset-0 w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          <source src={heroVideo.url} type="video/mp4" />
+        </video>
+      )}
+      {!showVideo && (
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+          aria-hidden="true"
+        />
+      )}
 
-      {/* Pulsing vignette for depth */}
+      {/* Dark overlay for text legibility */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 bg-primary/60 pointer-events-none"
         aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 35%, rgba(15,62,79,0.85) 100%)",
-        }}
       />
-
-      {/* Radial particles rushing outward from vanishing point */}
+      {/* Bottom gradient for smooth fade into next section */}
       <div
-        className="absolute inset-0 overflow-hidden pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary to-transparent pointer-events-none"
         aria-hidden="true"
-      >
-        <div className="absolute top-1/2 left-1/2 w-0 h-0">
-          {particles.map((p) => (
-            <span
-              key={p.id}
-              className="absolute top-0 left-0 rounded-full bg-white animate-particle-rush"
-              style={
-                {
-                  width: `${p.size}px`,
-                  height: `${p.size}px`,
-                  "--p-x": `${p.x}px`,
-                  "--p-y": `${p.y}px`,
-                  "--p-duration": `${p.duration}s`,
-                  "--p-delay": `${p.delay}s`,
-                  "--p-opacity": p.opacity,
-                } as React.CSSProperties
-              }
-            />
-          ))}
-        </div>
-      </div>
+      />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-background">
@@ -93,7 +77,7 @@ const HeroSection = () => {
                 </span>
               ))}
             </span>
-            <span className="block mt-2 relative">
+            <span className="block mt-2">
               {accentWords.map((word, i) => (
                 <span
                   key={i}
