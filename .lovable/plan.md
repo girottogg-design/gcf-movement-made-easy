@@ -1,30 +1,38 @@
-## Plano: Eliminar a "tontura" do hero
+## Plano: Hero com vídeo de fundo (caminhão real em movimento)
 
-### Diagnóstico
-O efeito de tontura vem do **zoom que vai e volta** (1.02 → 1.12 → 1.02 em loop). Quando a câmera "respira" assim, o cérebro lê como movimento conflitante (avança e recua). Para sensação de "veículo vindo", o movimento precisa ser **unidirecional, lento e contínuo** — nunca voltar.
+### Conceito
+Substituir a foto estática por um **vídeo cinematográfico em loop** mostrando um caminhão na estrada (ponto de vista frontal, vindo em direção à câmera, ou pegada lateral em alta velocidade). Isso resolve dois problemas de uma vez: a falta de "wow" e a foto não ser boa o suficiente. Movimento real é sempre mais convincente que efeitos artificiais.
 
-### Ajustes
+### Plano de execução
 
-**1. Zoom unidirecional com reset invisível**
-- Trocar `slow-zoom` (ida e volta) por um zoom que vai **só de 1.0 → 1.15 em ~30s** e reseta. Para evitar o "salto" do reset, usamos duas camadas com a mesma imagem em crossfade: enquanto uma faz o zoom, a outra começa do zero com opacity 0 e assume o lugar antes da primeira terminar. Resultado: zoom infinito sem tontura e sem corte visível.
-- Alternativa mais simples: zoom de 1.0 → 1.08 em 40s e mantém parado (uma única passada longa). Como o usuário só fica alguns segundos no hero antes de rolar, isso é suficiente.
+**1. Gerar o vídeo via IA**
+- Usar `videogen--generate_video` com prompt cinematográfico:
+  - Caminhão semi-reboque branco/azul descendo uma rodovia ao amanhecer/pôr do sol, câmera fixa em ângulo baixo, vindo em direção ao espectador, atmosfera profissional de logística, cores quentes e azul profundo, 4K cinematográfico, sem texto, sem marca visível.
+- Duração: 10s, resolução 1080p, aspect ratio 16:9.
+- Salvar em `src/assets/hero-video.mp4`.
 
-**2. Reduzir intensidade da vinheta pulsante**
-- Trocar pulse (0.45 ↔ 0.65) por **vinheta estática** com opacity fixa em 0.5. Pulsos lentos também contribuem para a sensação de "respiração" desconfortável.
+**2. Limpar o Hero**
+- Remover: zoom da imagem, partículas radiais, vinheta. O vídeo já entrega todo o movimento — qualquer efeito extra polui.
+- Manter: reveal do título com blur (estilo Turim) e a seta dupla de scroll.
 
-**3. Partículas mais lentas e mais sutis**
-- Reduzir de 28 → 16 partículas.
-- Aumentar duração média de 4s → 7s (movimento mais suave).
-- Reduzir opacidade máxima (0.4 → 0.25).
-- Resultado: presença atmosférica, não distrai.
+**3. Estrutura do vídeo**
+- `<video autoplay muted loop playsinline>` cobrindo todo o hero (`object-cover`, `inset-0 absolute`).
+- Overlay azul escuro semi-transparente (`bg-primary/55`) por cima para garantir legibilidade do texto branco.
+- `poster` com a imagem atual do caminhão para evitar tela preta enquanto o vídeo carrega.
+- `preload="metadata"` para não impactar tanto o LCP.
 
-**4. Manter** o reveal de texto com blur e a seta dupla (essas estão ok).
-
-### Recomendação
-Vou pela **alternativa simples** (zoom único de 40s + vinheta estática + partículas suaves). É o que dá sensação de "está acontecendo algo, o caminhão vem vindo" sem nenhum movimento que volte ou pulse.
+**4. Fallback de performance**
+- Em conexões lentas / `prefers-reduced-motion: reduce`, mostrar apenas o poster (foto) sem reproduzir o vídeo.
+- Detectar via JS: se `matchMedia('(prefers-reduced-motion: reduce)')` ou se for mobile com data saver, não montar o `<video>`.
 
 ### Arquivos
 | Ação | Arquivo |
 |------|---------|
-| Editar | `src/index.css` — `slow-zoom` unidirecional, remover `vignette-pulse` |
-| Editar | `src/components/HeroSection.tsx` — vinheta estática, menos partículas e mais lentas |
+| Gerar | `src/assets/hero-video.mp4` (via videogen) |
+| Editar | `src/components/HeroSection.tsx` — substituir background por `<video>`, remover partículas/vinheta/zoom |
+| Editar | `src/index.css` — remover keyframes não usados (`slow-zoom`, `particle-rush`, `vignette-pulse`, `chevron-down` permanece) |
+
+### Observação
+Se o vídeo gerado pela IA não ficar bom (caminhão estranho, deformado), podemos:
+- Regenerar com prompt ajustado.
+- Ou você me envia um vídeo de banco (Pexels/Pixabay) que eu integro.
