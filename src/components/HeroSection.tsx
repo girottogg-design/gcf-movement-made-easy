@@ -12,19 +12,18 @@ const HeroSection = () => {
   const titleWords = ["Somos", "o", "movimento", "que"];
   const accentWords = ["transforma", "o", "Brasil"];
 
-  // Radial particles — born near the vanishing point and rush outward
+  // Radial particles — born near the vanishing point and drift outward (subtle)
   const particles = useMemo(() => {
-    const count = 28;
+    const count = 16;
     return Array.from({ length: count }, (_, i) => {
-      // Distribute angles around the circle, with slight randomization
       const angle = (i / count) * Math.PI * 2 + (i % 3) * 0.4;
-      const distance = 600 + (i % 5) * 180; // px
+      const distance = 600 + (i % 5) * 180;
       const x = Math.cos(angle) * distance;
       const y = Math.sin(angle) * distance;
-      const duration = 3.5 + (i % 6) * 0.6;
-      const delay = (i * 0.25) % duration;
-      const size = 1 + (i % 4) * 0.5;
-      const opacity = 0.4 + (i % 5) * 0.1;
+      const duration = 7 + (i % 5) * 0.8;
+      const delay = (i * 0.5) % duration;
+      const size = 1 + (i % 3) * 0.5;
+      const opacity = 0.15 + (i % 4) * 0.04;
       return { x, y, duration, delay, size, opacity, id: i };
     });
   }, []);
@@ -45,7 +44,7 @@ const HeroSection = () => {
 
       {/* Pulsing vignette for depth */}
       <div
-        className="absolute inset-0 pointer-events-none animate-vignette-pulse"
+        className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
           background:
