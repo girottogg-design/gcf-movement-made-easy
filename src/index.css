@@ -138,6 +138,55 @@ All colors MUST be HSL.
     transition: var(--transition-smooth);
   }
 
+  /* Hero motion keyframes */
+  @keyframes road-lines {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes light-streak {
+    0% { transform: translateX(-120%) skewX(-20deg); opacity: 0; }
+    20% { opacity: 0.6; }
+    100% { transform: translateX(220%) skewX(-20deg); opacity: 0; }
+  }
+  @keyframes ken-burns {
+    0% { transform: scale(1) translateX(0); }
+    100% { transform: scale(1.15) translateX(-2%); }
+  }
+  @keyframes blur-in {
+    0% { opacity: 0; filter: blur(20px); transform: translateY(12px); }
+    100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+  }
+  @keyframes draw-underline {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+    50% { transform: translate(30px, -20px); opacity: 0.7; }
+  }
+
+  .animate-ken-burns { animation: ken-burns 25s ease-out forwards; }
+  .animate-road-lines { animation: road-lines 2.5s linear infinite; will-change: transform; }
+  .animate-light-streak { animation: light-streak 6s ease-in-out infinite; will-change: transform, opacity; }
+  .animate-blur-in {
+    opacity: 0;
+    animation: blur-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-draw-underline {
+    transform-origin: left;
+    animation: draw-underline 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  .animate-drift { animation: drift 8s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-ken-burns,
+    .animate-road-lines,
+    .animate-light-streak,
+    .animate-drift {
+      animation: none !important;
+    }
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
