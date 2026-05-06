@@ -1,26 +1,33 @@
-## Plano: Regenerar vídeo do hero — sem placa, sem motorista visível, contexto Brasil
+## Plano: Vídeo do hero com cara de Brasil + logo GCF + caminhão saindo da pista na curva
 
-### Problema
-- Placa do caminhão saiu deformada/falsa.
-- Aparece um "boneco de pano" no lugar do motorista (artefato comum de geração de IA).
-- Cenário não remete claramente ao Brasil.
+### Problemas reportados
+1. Cenário ainda não parece brasileiro o suficiente.
+2. O caminhão precisa ter a logo da GCF na lateral do baú.
+3. Na curva o caminhão "come a pista" (cruza a faixa) — precisa ficar dentro da própria mão.
 
-### Solução
-Regenerar o vídeo com prompt mais restritivo e câmera afastada do motorista/placa:
+### Estratégia em 2 etapas
 
-**Prompt novo:**
-- Caminhão semi-reboque branco moderno em rodovia brasileira (BR-101 / serra), **sem placa de identificação**, **vidros escuros sem motorista visível**, vegetação tropical típica do Brasil (mata atlântica/cerrado) ao fundo, hora dourada, câmera baixa em ângulo levemente lateral (3/4 frontal) para não focar no para-brisa nem na placa, leve poeira da estrada, atmosfera profissional, 4K cinematográfico, câmera fixa e estável.
+**Etapa 1 — Gerar o frame inicial (imagem) com tudo certo**
+Em vez de gerar vídeo do zero (a IA de vídeo é difícil de controlar para detalhes), vamos:
 
-**Parâmetros:**
-- 10s, 1080p, 16:9, `camera_fixed: true`.
-- Salvar em `src/assets/hero-video.mp4` (sobrescreve o atual).
+1. Gerar uma **imagem base** muito brasileira via `imagegen` (premium):
+   - Prompt: caminhão semi-reboque branco moderno em rodovia brasileira reconhecível (BR-116/Régis Bittencourt ou Serra do Mar), placa de sinalização brasileira amarela com escrita "BR-101" ao lado da pista, vegetação típica de mata atlântica, montanhas com araucárias/serra brasileira ao fundo, faixa amarela contínua dupla no meio da pista (padrão DENATRAN brasileiro), acostamento com defensa metálica, hora dourada do fim de tarde tropical, vista 3/4 traseira-lateral mostrando a lateral do baú bem visível e plana, sem placa de identificação, sem motorista visível.
 
-### Plano B
-Se mesmo assim a IA gerar artefatos (placa estranha, motorista deformado), regenerar mais uma vez com ângulo **traseiro** do caminhão (vendo o baú indo embora pela rodovia) — elimina completamente o risco de placa frontal e motorista.
+2. Aplicar a **logo da GCF** na lateral do baú via `imagegen edit_image` (mesclando a logo `public/lovable-uploads/bd01e038-b63c-4a52-b5da-67f949721274.png` na lateral do trailer).
+
+3. Usar essa imagem como `starting_frame` do `videogen`, com prompt focado em:
+   - "truck drives smoothly through the curve staying entirely within its own lane, never crossing the center line, camera follows from behind-side, road markings clearly painted, Brazilian landscape".
+   - Câmera fixa, 10s, 1080p.
+
+**Etapa 2 — Validar visualmente**
+- Inspecionar o frame gerado e o vídeo final antes de entregar.
+- Se a logo ficar deformada ou o caminhão sair da pista de novo, regenerar a imagem base com instruções mais explícitas e tentar novamente.
 
 ### Arquivos
 | Ação | Arquivo |
 |------|---------|
-| Regenerar | `src/assets/hero-video.mp4` |
+| Gerar | `src/assets/hero-frame.jpg` (imagem base brasileira) |
+| Editar | `src/assets/hero-frame.jpg` (aplicar logo GCF na lateral do baú) |
+| Regenerar | `src/assets/hero-video.mp4` (a partir do frame) |
 
-Sem mudanças de código — só troca do asset.
+Sem mudanças no código React — só troca de assets.
