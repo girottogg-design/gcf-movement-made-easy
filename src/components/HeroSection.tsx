@@ -44,7 +44,7 @@ const HeroSection = () => {
 
       {/* Pulsing vignette for depth */}
       <div
-        className="absolute inset-0 pointer-events-none animate-vignette-pulse"
+        className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
           background:
