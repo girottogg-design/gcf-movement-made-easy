@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-transport.jpg";
+import heroImage from "@/assets/hero-frame.jpg";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 
 const HeroSection = () => {
