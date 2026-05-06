@@ -1,38 +1,26 @@
-## Plano: Hero com vídeo de fundo (caminhão real em movimento)
+## Plano: Regenerar vídeo do hero — sem placa, sem motorista visível, contexto Brasil
 
-### Conceito
-Substituir a foto estática por um **vídeo cinematográfico em loop** mostrando um caminhão na estrada (ponto de vista frontal, vindo em direção à câmera, ou pegada lateral em alta velocidade). Isso resolve dois problemas de uma vez: a falta de "wow" e a foto não ser boa o suficiente. Movimento real é sempre mais convincente que efeitos artificiais.
+### Problema
+- Placa do caminhão saiu deformada/falsa.
+- Aparece um "boneco de pano" no lugar do motorista (artefato comum de geração de IA).
+- Cenário não remete claramente ao Brasil.
 
-### Plano de execução
+### Solução
+Regenerar o vídeo com prompt mais restritivo e câmera afastada do motorista/placa:
 
-**1. Gerar o vídeo via IA**
-- Usar `videogen--generate_video` com prompt cinematográfico:
-  - Caminhão semi-reboque branco/azul descendo uma rodovia ao amanhecer/pôr do sol, câmera fixa em ângulo baixo, vindo em direção ao espectador, atmosfera profissional de logística, cores quentes e azul profundo, 4K cinematográfico, sem texto, sem marca visível.
-- Duração: 10s, resolução 1080p, aspect ratio 16:9.
-- Salvar em `src/assets/hero-video.mp4`.
+**Prompt novo:**
+- Caminhão semi-reboque branco moderno em rodovia brasileira (BR-101 / serra), **sem placa de identificação**, **vidros escuros sem motorista visível**, vegetação tropical típica do Brasil (mata atlântica/cerrado) ao fundo, hora dourada, câmera baixa em ângulo levemente lateral (3/4 frontal) para não focar no para-brisa nem na placa, leve poeira da estrada, atmosfera profissional, 4K cinematográfico, câmera fixa e estável.
 
-**2. Limpar o Hero**
-- Remover: zoom da imagem, partículas radiais, vinheta. O vídeo já entrega todo o movimento — qualquer efeito extra polui.
-- Manter: reveal do título com blur (estilo Turim) e a seta dupla de scroll.
+**Parâmetros:**
+- 10s, 1080p, 16:9, `camera_fixed: true`.
+- Salvar em `src/assets/hero-video.mp4` (sobrescreve o atual).
 
-**3. Estrutura do vídeo**
-- `<video autoplay muted loop playsinline>` cobrindo todo o hero (`object-cover`, `inset-0 absolute`).
-- Overlay azul escuro semi-transparente (`bg-primary/55`) por cima para garantir legibilidade do texto branco.
-- `poster` com a imagem atual do caminhão para evitar tela preta enquanto o vídeo carrega.
-- `preload="metadata"` para não impactar tanto o LCP.
-
-**4. Fallback de performance**
-- Em conexões lentas / `prefers-reduced-motion: reduce`, mostrar apenas o poster (foto) sem reproduzir o vídeo.
-- Detectar via JS: se `matchMedia('(prefers-reduced-motion: reduce)')` ou se for mobile com data saver, não montar o `<video>`.
+### Plano B
+Se mesmo assim a IA gerar artefatos (placa estranha, motorista deformado), regenerar mais uma vez com ângulo **traseiro** do caminhão (vendo o baú indo embora pela rodovia) — elimina completamente o risco de placa frontal e motorista.
 
 ### Arquivos
 | Ação | Arquivo |
 |------|---------|
-| Gerar | `src/assets/hero-video.mp4` (via videogen) |
-| Editar | `src/components/HeroSection.tsx` — substituir background por `<video>`, remover partículas/vinheta/zoom |
-| Editar | `src/index.css` — remover keyframes não usados (`slow-zoom`, `particle-rush`, `vignette-pulse`, `chevron-down` permanece) |
+| Regenerar | `src/assets/hero-video.mp4` |
 
-### Observação
-Se o vídeo gerado pela IA não ficar bom (caminhão estranho, deformado), podemos:
-- Regenerar com prompt ajustado.
-- Ou você me envia um vídeo de banco (Pexels/Pixabay) que eu integro.
+Sem mudanças de código — só troca do asset.
